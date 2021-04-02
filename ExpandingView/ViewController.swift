@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         trayOriginalHeight = 100
         trayExpandedHeight = 300
-        trayMaxHeight = UIScreen.main.bounds.height
+        trayMaxHeight = 600
     }
 
     @IBAction func didPanTray(_ sender: UIPanGestureRecognizer) {
@@ -42,38 +42,47 @@ class ViewController: UIViewController {
                 heightConstraint.constant = trayCurrentHeight + translation.y
 
                 let greenViewY = heightConstraint.constant - (child?.greenView?.frame.height)!
+                let blueViewY = heightConstraint.constant - (child?.blueView?.frame.height)!
 
                 if greenViewY < trayOriginalHeight {
                     child?.greenView?.frame.origin.y = greenViewY
                 }
+
+                child?.blueView?.frame.origin.y = blueViewY
             }
         } else if sender.state == UIGestureRecognizer.State.ended {
             let velocity = sender.velocity(in: view)
-            var greeViewY: CGFloat = -100
+            var greenViewY: CGFloat = -100
+            var blueViewY: CGFloat = -200
 
             switch heightConstraint.constant {
             case let x where x > trayExpandedHeight:
                 if velocity.y > 0 {
                     heightConstraint.constant = trayMaxHeight
+                    blueViewY = trayExpandedHeight
                 } else {
                     heightConstraint.constant = trayExpandedHeight
+                    blueViewY = trayExpandedHeight - (child?.blueView?.frame.height)!
                 }
-                greeViewY = trayOriginalHeight
+                greenViewY = trayOriginalHeight
             case let x where x > trayOriginalHeight && x < trayExpandedHeight:
                 if velocity.y > 0 {
                     heightConstraint.constant = trayExpandedHeight
-                    greeViewY = trayOriginalHeight
+                    greenViewY = trayOriginalHeight
+                    blueViewY = trayExpandedHeight - (child?.blueView?.frame.height)!
                 } else {
                     heightConstraint.constant = trayOriginalHeight
-                    greeViewY = -100
+                    greenViewY = -100
+                    blueViewY = trayOriginalHeight - (child?.blueView?.frame.height)!
                 }
             default:
                 break
             }
 
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseInOut) {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseInOut) {
                 self.view.layoutIfNeeded()
-                self.child?.greenView?.frame.origin.y = greeViewY
+                self.child?.greenView?.frame.origin.y = greenViewY
+                self.child?.blueView?.frame.origin.y = blueViewY
             } completion: { completed in
                 print("completed")
             }
