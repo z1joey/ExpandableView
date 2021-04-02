@@ -17,39 +17,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qt0-PM-2eW">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="woQ-qh-qvo">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="kQS-PM-gPD"/>
+                                    <constraint firstAttribute="height" constant="100" id="LAj-WF-3yh"/>
                                 </constraints>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="DCy-QT-kIL" appends="YES" id="YXJ-A4-SPp"/>
+                                    <outletCollection property="gestureRecognizers" destination="NsQ-3s-aOE" appends="YES" id="Yn8-4v-76o"/>
+                                    <segue destination="eTc-pQ-h5e" kind="embed" id="5Cz-Cf-eS1"/>
                                 </connections>
-                            </view>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Qt0-PM-2eW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bph-VV-hvH"/>
-                            <constraint firstItem="Qt0-PM-2eW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FJb-pv-yOm"/>
-                            <constraint firstItem="Qt0-PM-2eW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="geH-Gb-a7F"/>
+                            <constraint firstItem="woQ-qh-qvo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="190-nj-BDN"/>
+                            <constraint firstItem="woQ-qh-qvo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="TW9-Ir-ZOF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="woQ-qh-qvo" secondAttribute="trailing" id="ncV-ie-rrp"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="heightConstraint" destination="kQS-PM-gPD" id="xIc-Ba-yw6"/>
-                        <outlet property="trayView" destination="Qt0-PM-2eW" id="i8g-98-n20"/>
+                        <outlet property="heightConstraint" destination="LAj-WF-3yh" id="dAk-nZ-cFt"/>
+                        <outlet property="trayView" destination="woQ-qh-qvo" id="4jP-gU-8RH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="DCy-QT-kIL">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="NsQ-3s-aOE">
                     <connections>
-                        <action selector="didPanTray:" destination="BYZ-38-t0r" id="TYC-FC-t29"/>
+                        <action selector="didPanTray:" destination="BYZ-38-t0r" id="Eq9-iW-XoL"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-230.43478260869566" y="93.75"/>
+        </scene>
+        <!--Child View Controller-->
+        <scene sceneID="nvm-da-Lti">
+            <objects>
+                <viewController id="eTc-pQ-h5e" customClass="ChildViewController" customModule="ExpandingView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h8F-RP-Ni4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNX-WV-qWh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="zr5-K3-rp3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vNX-WV-qWh" firstAttribute="top" secondItem="h8F-RP-Ni4" secondAttribute="top" id="PoC-E2-k4d"/>
+                            <constraint firstAttribute="trailing" secondItem="vNX-WV-qWh" secondAttribute="trailing" id="fUm-LW-MiG"/>
+                            <constraint firstItem="vNX-WV-qWh" firstAttribute="leading" secondItem="h8F-RP-Ni4" secondAttribute="leading" id="geG-of-a5B"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="redView" destination="vNX-WV-qWh" id="MUh-H2-SSm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xon-qL-80W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="630" y="94"/>
         </scene>
     </scenes>
     <resources>
