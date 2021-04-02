@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D402CCC02616EB8E0068C8B2 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D402CCBF2616EB8E0068C8B2 /* ChildViewController.swift */; };
+		D402CCC426170ABE0068C8B2 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D402CCC326170ABE0068C8B2 /* CustomCell.xib */; };
+		D402CCC726170AE80068C8B2 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D402CCC626170AE80068C8B2 /* CustomCell.swift */; };
 		D45E106826155983006B5E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45E106726155983006B5E5C /* AppDelegate.swift */; };
 		D45E106C26155983006B5E5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45E106B26155983006B5E5C /* ViewController.swift */; };
 		D45E106F26155983006B5E5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45E106D26155983006B5E5C /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		D402CCBF2616EB8E0068C8B2 /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
+		D402CCC326170ABE0068C8B2 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		D402CCC626170AE80068C8B2 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		D45E106426155983006B5E5C /* ExpandingView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpandingView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45E106726155983006B5E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D45E106B26155983006B5E5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				D45E107026155986006B5E5C /* Assets.xcassets */,
 				D45E107226155986006B5E5C /* LaunchScreen.storyboard */,
 				D45E107526155986006B5E5C /* Info.plist */,
+				D402CCC326170ABE0068C8B2 /* CustomCell.xib */,
+				D402CCC626170AE80068C8B2 /* CustomCell.swift */,
 			);
 			path = ExpandingView;
 			sourceTree = "<group>";
@@ -125,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D45E107426155986006B5E5C /* LaunchScreen.storyboard in Resources */,
+				D402CCC426170ABE0068C8B2 /* CustomCell.xib in Resources */,
 				D45E107126155986006B5E5C /* Assets.xcassets in Resources */,
 				D45E106F26155983006B5E5C /* Main.storyboard in Resources */,
 			);
@@ -139,6 +146,7 @@
 			files = (
 				D45E106C26155983006B5E5C /* ViewController.swift in Sources */,
 				D45E106826155983006B5E5C /* AppDelegate.swift in Sources */,
+				D402CCC726170AE80068C8B2 /* CustomCell.swift in Sources */,
 				D402CCC02616EB8E0068C8B2 /* ChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
